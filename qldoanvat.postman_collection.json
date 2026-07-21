@@ -1,0 +1,483 @@
+{
+	"info": {
+		"_postman_id": "a9a3b6f8-45b6-455b-9d43-cb2ebf1a3b11",
+		"name": "QLDoAnVat API Collection",
+		"description": "Bộ sưu tập API cho ứng dụng Quản lý đồ ăn vặt. Bao gồm các endpoint Quản lý sản phẩm, Nhân viên, Khách hàng, Đơn hàng, Kho, Tài khoản và Thống kê.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Sản Phẩm",
+			"item": [
+				{
+					"name": "GET Danh sách sản phẩm",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/sanpham",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"sanpham"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Tìm kiếm sản phẩm",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/sanpham/timkiem?keyword=Bánh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"sanpham",
+								"timkiem"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "Bánh"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Chi tiết sản phẩm",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/sanpham/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"sanpham",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Thêm sản phẩm",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tenSanPham\": \"Bánh tráng nướng Đà Lạt\",\n    \"giaCu\": 25000,\n    \"giaMoi\": 20000,\n    \"giamGia\": \"-20%\",\n    \"hinhAnh\": \"https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80\",\n    \"moTa\": \"Bánh tráng nướng phô mai giòn tan thơm phức\",\n    \"trangThai\": \"con_hang\",\n    \"danhMucId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/sanpham",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"sanpham"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Sửa sản phẩm",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tenSanPham\": \"Bánh tráng nướng đặc biệt\",\n    \"giaCu\": 30000,\n    \"giaMoi\": 25000,\n    \"giamGia\": \"-17%\",\n    \"hinhAnh\": \"https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80\",\n    \"moTa\": \"Bánh tráng nướng phô mai thêm xúc xích bò khô cực ngon\",\n    \"trangThai\": \"con_hang\",\n    \"danhMucId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/sanpham/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"sanpham",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Xóa sản phẩm",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/sanpham/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"sanpham",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2. Nhân Viên",
+			"item": [
+				{
+					"name": "GET Danh sách nhân viên",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/nhanvien",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"nhanvien"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Tìm kiếm nhân viên",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/nhanvien/timkiem?keyword=Tuấn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"nhanvien",
+								"timkiem"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "Tuấn"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Chi tiết nhân viên",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/nhanvien/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"nhanvien",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Thêm nhân viên",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"hoTen\": \"Nguyễn Văn Bình\",\n    \"soDienThoai\": \"0912345678\",\n    \"chucVu\": \"Phục vụ\",\n    \"ngayVaoLam\": \"2026-06-01\",\n    \"trangThai\": \"Đang làm\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/nhanvien",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"nhanvien"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Sửa nhân viên",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"hoTen\": \"Nguyễn Văn Bình\",\n    \"soDienThoai\": \"0912345678\",\n    \"chucVu\": \"Phục vụ\",\n    \"ngayVaoLam\": \"2026-06-01\",\n    \"trangThai\": \"Đang làm\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/nhanvien/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"nhanvien",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Xóa nhân viên",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/nhanvien/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"nhanvien",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3. Khách Hàng",
+			"item": [
+				{
+					"name": "GET Danh sách khách hàng",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/khachhang",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"khachhang"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Tìm kiếm khách hàng",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/khachhang/timkiem?keyword=Nguyễn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"khachhang",
+								"timkiem"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "Nguyễn"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Thêm khách hàng",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ten\": \"Phạm Minh Tuấn\",\n    \"sdt\": \"0987654321\",\n    \"email\": \"tuan@gmail.com\",\n    \"diaChi\": \"Hà Nội\",\n    \"soDonHang\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/khachhang",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"khachhang"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4. Đơn Hàng",
+			"item": [
+				{
+					"name": "GET Danh sách đơn hàng",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/donhang",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"donhang"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "5. Thống Kê",
+			"item": [
+				{
+					"name": "GET Dashboard",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/thongke/dashboard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"thongke",
+								"dashboard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Tổng kết theo năm",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/thongke/tong-ket?year=2026",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"thongke",
+								"tong-ket"
+							],
+							"query": [
+								{
+									"key": "year",
+									"value": "2026"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Top sản phẩm bán chạy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/thongke/top-sanpham?limit=8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"thongke",
+								"top-sanpham"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
